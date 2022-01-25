@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PetItem from './PetItem';
-import { observer } from 'mobx-react';
-import petStore from '../petStore';
+import React, { useState } from "react";
+import PetItem from "./PetItem";
+import { observer } from "mobx-react";
+import petStore from "../petStore";
 function PetsList() {
-  const [query, setQuery] = useState('');
-  const [type, setType] = useState('');
+  const [query, setQuery] = useState("");
+  const [type, setType] = useState("");
   const pets = petStore.pets
     .filter(
       (pet) =>
@@ -12,6 +12,7 @@ function PetsList() {
         pet.type.includes(type)
     )
     .map((pet) => <PetItem key={pet.id} pet={pet} />);
+  console.log(pets);
   return (
     <section id="doctors" class="doctor-section pt-140">
       <div class="container">
