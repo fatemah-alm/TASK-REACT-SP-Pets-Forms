@@ -20,6 +20,12 @@ class PetStore {
     pet.id = this.pets[this.pets.length - 1].id + 1;
     this.pets.push(pet);
   };
+
+  updatePet = (pett) => {
+    this.pets = this.pets.map((pet) => {
+      pet.id === pett.id ? (pet = pett) : (pet = pet);
+    });
+  };
 }
 
 const petStore = new PetStore();
